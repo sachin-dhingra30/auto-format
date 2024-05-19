@@ -1,0 +1,128 @@
+---
+type: specs.openrewrite.org/v1beta/style
+name: com.rbs.securities.NwmStyle
+displayName: NWM java format
+styleConfigs:
+  - org.openrewrite.java.style.ImportLayoutStyle:
+      classCountToUseStarImport: 999
+      nameCountToUseStarImport: 999
+      layout:
+        - import static all other imports
+        - <blank line>
+        - import all other imports
+  - org.openrewrite.java.style.TabsAndIndentsStyle:
+      useTabCharacter: false
+      tabSize: 4
+      indentSize: 2
+      continuationIndent: 4
+      MethodDeclarationParameters:
+        alignWhenMultiple: true
+  - org.openrewrite.java.style.SpacesStyle:
+      BeforeParentheses:
+        methodDeclaration: false
+        methodCall: false
+        ifParentheses: true
+        forParentheses: true
+        whileParentheses: true
+        switchParentheses: true
+        tryParentheses: true
+        catchParentheses: true
+        synchronizedParentheses: true
+        annotationParameters: false
+      AroundOperators:
+        assignment: true
+        logical: true
+        equality: true
+        relational: true
+        bitwise: true
+        additive: true
+        multiplicative: true
+        shift: true
+        unary: false
+        lambdaArrow: true
+        methodReferenceDoubleColon: false
+      BeforeLeftBrace:
+        classLeftBrace: true
+        methodLeftBrace: true
+        ifLeftBrace: true
+        elseLeftBrace: true
+        forLeftBrace: true
+        whileLeftBrace: true
+        doLeftBrace: true
+        switchLeftBrace: true
+        tryLeftBrace: true
+        catchLeftBrace: true
+        finallyLeftBrace: true
+        synchronizedLeftBrace: true
+        arrayInitializerLeftBrace: true
+        annotationArrayInitializerLeftBrace: false
+      BeforeKeywords:
+        elseKeyword: true
+        whileKeyword: true
+        catchKeyword: true
+        finallyKeyword: true
+      Within:
+        codeBraces: false
+        brackets: false
+        arrayInitializerBraces: false
+        emptyArrayInitializerBraces: false
+        groupingParentheses: false
+        methodDeclarationParentheses: false
+        emptyMethodDeclarationParentheses: false
+        methodCallParentheses: false
+        emptyMethodCallParentheses: false
+        ifParentheses: false
+        forParentheses: false
+        whileParentheses: false
+        switchParentheses: false
+        tryParentheses: false
+        catchParentheses: false
+        synchronizedParentheses: false
+        typeCastParentheses: false
+        annotationParentheses: false
+        angleBrackets: false
+        recordHeader: false
+      TernaryOperator:
+        beforeQuestionMark: true
+        afterQuestionMark: true
+        beforeColon: true
+        afterColon: true
+      TypeArguments:
+        afterComma: true
+        beforeOpeningAngleBracket: false
+        afterClosingAngleBracket: false
+      Other:
+        beforeComma: false
+        afterComma: true
+        beforeForSemicolon: false
+        afterForSemicolon: true
+        afterTypeCast: true
+        beforeColonInForEach: true
+        insideOneLineEnumBraces: false
+      TypeParameters:
+        beforeOpeningAngleBracket: false
+        aroundTypeBounds: true
+  - org.openrewrite.java.style.WrappingAndBracesStyle:
+      IfStatement:
+        elseOnNewLine: false
+  - org.openrewrite.java.style.BlankLinesStyle:
+      KeepMaximum:
+        inDeclarations: 2
+        inCode: 2
+        beforeEndOfBlock: 2
+        betweenHeaderAndPackage: 2
+      Minimum:
+        beforePackage: 1
+        afterPackage: 1
+        beforeImports: 1
+        afterImports: 1
+        aroundClass: 1
+        afterClassHeader: 0
+        beforeClassEnd: 0
+        afterAnonymousClassHeader: 0
+        aroundFieldInInterface: 0
+        aroundField: 0
+        aroundMethodInInterface: 1
+        aroundMethod: 1
+        beforeMethodBody: 0
+        aroundInitializer: 1
