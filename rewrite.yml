@@ -1,6 +1,6 @@
 ---
 type: specs.openrewrite.org/v1beta/style
-name: com.rbs.securities.NwmStyle
+name: com.autoformat.MyStyle
 displayName: NWM java format
 styleConfigs:
   - org.openrewrite.java.style.ImportLayoutStyle:
